@@ -5,7 +5,7 @@ export const darkTheme = createGlobalTheme(':root', {
     primary: '#80a8e0',
     primaryLight: '#a4bbdb',
     defaultFont: '#fafafa',
-    grayFont: '#999',
+    grayFont: '#bbb',
     gray: '#aaa',
     embedBackColor: 'rgba(0, 0, 0, 0.4)',
   },
