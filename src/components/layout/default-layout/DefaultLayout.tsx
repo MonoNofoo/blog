@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import {
+  decorationBig,
+  decorationMiddle,
+  decorationSmall,
   header,
   main,
   outer,
@@ -15,6 +18,9 @@ type Props = {
 const DefaultLayout = ({ children, siteNameElement }: Props) => {
   return (
     <div className={outer}>
+      <div className={decorationBig} />
+      <div className={decorationSmall} />
+      <div className={decorationMiddle} />
       <header className={header}>
         {siteNameElement === 'a' ? (
           <Link href="/">

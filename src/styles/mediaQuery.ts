@@ -33,7 +33,7 @@ export const responsiveStyle = ({
   desktop?: CSSProps;
 }) => {
   const hasMediaQueries =
-    typeof tablet === 'undefined' || typeof desktop === 'undefined';
+    typeof tablet !== 'undefined' || typeof desktop !== 'undefined';
 
   return {
     ...(mobile ?? {}),
