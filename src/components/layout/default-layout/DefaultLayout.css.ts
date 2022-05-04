@@ -23,7 +23,11 @@ export const header = style([
   },
 ]);
 
-export const main = style({});
+export const main = style({
+  maxWidth: '1000px',
+  width: '100%',
+  margin: '0 auto',
+});
 
 export const siteName = style({
   fontWeight: 'bold',

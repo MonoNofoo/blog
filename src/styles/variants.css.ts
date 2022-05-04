@@ -2,13 +2,18 @@ import { createGlobalTheme, styleVariants } from '@vanilla-extract/css';
 
 export const darkTheme = createGlobalTheme(':root', {
   color: {
+    primary: '#80a8e0',
+    primaryLight: '#a4bbdb',
     defaultFont: '#fafafa',
+    grayFont: '#999',
+    gray: '#aaa',
+    embedBackColor: 'rgba(0, 0, 0, 0.4)',
   },
   fontSize: {
     default: '1.6rem',
   },
   gradient: {
-    base: 'linear-gradient(-45deg, #000428, #004e92)',
+    base: 'linear-gradient(-45deg, #090a12, #1a1d30)',
   },
 });
 
@@ -30,12 +35,9 @@ export const sizeTheme = createGlobalTheme(':root', {
 
 export const darkGlass = styleVariants({
   dark: {
-    backdropFilter: 'blur(5px)',
-    backgroundColor: ' rgba(0,191,255, 0.075)',
-    boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-    borderTop: '1px rgba(255,255,255,0.4) solid',
-    borderLeft: '1px rgba(255,255,255,0.4) solid',
-    borderBottom: '1px rgba(40,40,40,0.35) solid',
-    borderRight: '1px rgba(40,40,40,0.35) solid',
+    backdropFilter: 'blur(10px)',
+    backgroundColor: 'rgba(255,255,255,0.06)',
+    boxShadow: '0 30px 35px rgba(0,0,0,0.25)',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
   },
 });

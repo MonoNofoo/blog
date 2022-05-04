@@ -5,7 +5,7 @@ import {
   main,
   outer,
   siteName,
-} from '@/components/layout/DefaultLayout.css';
+} from '@/components/layout/default-layout/DefaultLayout.css';
 
 type Props = {
   children: ReactNode;
@@ -25,7 +25,6 @@ const DefaultLayout = ({ children, siteNameElement }: Props) => {
         )}
       </header>
       <main className={main}>{children}</main>
-      <footer></footer>
     </div>
   );
 };

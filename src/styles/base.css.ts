@@ -17,3 +17,11 @@ globalStyle('body', {
     tablet: { fontSize: sizeTheme.fontSize.default.tablet },
   }),
 });
+
+globalStyle('a', {
+  color: darkTheme.color.primary,
+});
+
+globalStyle('a:hover', {
+  color: darkTheme.color.primaryLight,
+});
