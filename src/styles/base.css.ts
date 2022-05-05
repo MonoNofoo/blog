@@ -18,10 +18,15 @@ globalStyle('body', {
   }),
 });
 
+globalStyle('p', {
+  marginBottom: 0,
+});
+
 globalStyle('a', {
   color: darkTheme.color.primary,
 });
 
 globalStyle('a:hover', {
   color: darkTheme.color.primaryLight,
+  cursor: 'pointer',
 });

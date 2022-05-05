@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { darkGlass, darkTheme } from '@/styles/variants.css';
+import { darkTheme } from '@/styles/variants.css';
 
 export const heading = style({
   marginBottom: 0,

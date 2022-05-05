@@ -4,11 +4,13 @@ import {
   decorationBig,
   decorationMiddle,
   decorationSmall,
+  footer,
   header,
   main,
   outer,
   siteName,
 } from '@/components/layout/default-layout/DefaultLayout.css';
+import { format } from 'date-fns';
 
 type Props = {
   children: ReactNode;
@@ -31,6 +33,9 @@ const DefaultLayout = ({ children, siteNameElement }: Props) => {
         )}
       </header>
       <main className={main}>{children}</main>
+      <footer className={footer}>
+        <small>&copy; {format(new Date(), 'yyyy')} mono_nofoo</small>
+      </footer>
     </div>
   );
 };

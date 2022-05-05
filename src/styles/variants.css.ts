@@ -2,8 +2,8 @@ import { createGlobalTheme, styleVariants } from '@vanilla-extract/css';
 
 export const darkTheme = createGlobalTheme(':root', {
   color: {
-    primary: '#80a8e0',
-    primaryLight: '#a4bbdb',
+    primary: '#32f8fd',
+    primaryLight: '#7dfbfe',
     defaultFont: '#fafafa',
     grayFont: '#bbb',
     gray: '#aaa',
@@ -13,7 +13,13 @@ export const darkTheme = createGlobalTheme(':root', {
     default: '1.6rem',
   },
   gradient: {
-    base: 'linear-gradient(-45deg, #090a12, #1a1d30)',
+    base: 'linear-gradient(to right bottom, #1a1d30, #171928, #131521, #0f101a, #090a12)',
+    primary:
+      'linear-gradient(to right bottom, #32f8fd, #2ac9cd, #219c9f, #187274, #0f4a4b)',
+  },
+  shadow: {
+    darkLarge: '0 30px 35px rgba(0, 0, 0, 0.25)',
+    light: '0 0 3px rgba(255, 255, 255, 0.3)',
   },
 });
 
@@ -37,7 +43,7 @@ export const darkGlass = styleVariants({
   dark: {
     backdropFilter: 'blur(10px)',
     backgroundColor: 'rgba(255,255,255,0.06)',
-    boxShadow: '0 30px 35px rgba(0,0,0,0.25)',
+    boxShadow: darkTheme.shadow.darkLarge,
     border: '1px solid rgba(255, 255, 255, 0.1)',
   },
 });

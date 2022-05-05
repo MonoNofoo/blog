@@ -104,7 +104,7 @@ export const main = style({
   minWidth: '320px',
   width: '100%',
   margin: '0 auto',
-  padding: '0 8px 80px',
+  padding: '0 16px 80px',
 });
 
 export const siteName = style({
@@ -116,3 +116,12 @@ export const siteName = style({
     tablet: { fontSize: '2rem' },
   }),
 });
+
+export const footer = style([
+  darkGlass.dark,
+  {
+    padding: '8px 0',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+]);
