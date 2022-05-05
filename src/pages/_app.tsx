@@ -1,8 +1,8 @@
+import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import 'sanitize.css';
 import '@/styles/lib/prism.css';
 import '@/styles/base.css';
-import Head from 'next/head';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
