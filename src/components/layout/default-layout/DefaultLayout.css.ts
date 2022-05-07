@@ -115,11 +115,20 @@ export const siteName = style({
     mobile: { fontSize: '1.8rem' },
     tablet: { fontSize: '2rem' },
   }),
+  selectors: {
+    '&:hover': {
+      color: darkTheme.color.defaultFont,
+    },
+  },
 });
 
 export const footer = style([
   darkGlass.dark,
   {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
     padding: '8px 0',
     display: 'flex',
     justifyContent: 'center',

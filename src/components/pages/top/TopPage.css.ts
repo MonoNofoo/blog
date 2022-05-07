@@ -35,7 +35,7 @@ export const articleListItem = style([
 ]);
 
 export const title = style({
-  margin: '0',
+  margin: '16px 0 0',
   ...responsiveStyle({
     mobile: {
       fontSize: '1.8rem',

@@ -1,39 +1,38 @@
 import { FaPencilAlt } from 'react-icons/fa';
 import Link from 'next/link';
-import {
-  articleList,
-  articleListItem,
-  date,
-  dateIcon,
-  dateShowcase,
-  description,
-  detailLink,
-  profShowcase,
-  title,
-} from '@/components/pages/top/TopPage.css';
+import * as styles from '@/components/pages/top/TopPage.css';
 import Profile from '@/components/organisms/profile/Profile';
+import { MetaData } from '@/domains/models/articles/MetaData';
+import { formatLocalDateToJapanese } from '@/domains/values/shared/LocalDate';
+import { OmitMetaDataDescription } from '@/domains/values/articles/MetaDataDescription';
+import { ArticleDetailPagePath } from '@/const/pagePath';
+import TagList from '@/components/organisms/tag-list/TagList';
 
-const TopPage = () => {
-  const dummy = [...Array(30)].map((_, i) => i);
+export type TopPageProps = {
+  articlesMetaData: MetaData[];
+};
+
+const TopPage = ({ articlesMetaData }: TopPageProps) => {
   return (
     <div>
-      <div className={articleList}>
-        <aside className={profShowcase}>
+      <div className={styles.articleList}>
+        <aside className={styles.profShowcase}>
           <Profile />
         </aside>
-        {dummy.map((i) => (
-          <article className={articleListItem} key={i}>
-            <h2 className={title}>記事タイトル</h2>
-            <p className={description}>
-              記事の導入文とか記事の導入文とか記事の導入文とか記事の導入文とか
+        {articlesMetaData.map((metaData) => (
+          <article className={styles.articleListItem} key={metaData.id}>
+            <TagList tagIds={metaData.tags} />
+            <h2 className={styles.title}>{metaData.title}</h2>
+            <p className={styles.description}>
+              {OmitMetaDataDescription(metaData.description)}
             </p>
-            <Link href="/">
-              <a className={detailLink}>全文を見る</a>
+            <Link href={ArticleDetailPagePath(metaData.id)}>
+              <a className={styles.detailLink}>全文を見る</a>
             </Link>
-            <span className={dateShowcase}>
-              <FaPencilAlt className={dateIcon} />
-              <time className={date} dateTime="2022-05-01">
-                2022年05月01日
+            <span className={styles.dateShowcase}>
+              <FaPencilAlt className={styles.dateIcon} />
+              <time className={styles.date} dateTime={metaData.createdAt}>
+                {formatLocalDateToJapanese(metaData.createdAt)}
               </time>
             </span>
           </article>
