@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import Head from 'next/head';
 import DefaultLayout from '@/components/layout/default-layout/DefaultLayout';
 import { showcase } from '@/components/layout/article-layout/ArticleLayout.css';
 import {
@@ -12,9 +13,11 @@ import {
   Quote,
   Text,
 } from '@/components/atom/custom-mdx/CustomMdx';
+import { MetaData } from '@/domains/models/articles/MetaData';
 
 type Props = {
   children: ReactNode;
+  metaData: MetaData;
 };
 
 const components = {
@@ -28,11 +31,19 @@ const components = {
   code: InlineCode,
 };
 
-const ArticleLayout = ({ children }: Props) => {
+const ArticleLayout = ({ children, metaData }: Props) => {
   return (
     <DefaultLayout>
+      <Head>
+        <title>{metaData.title}｜Mono Memo</title>
+        <meta name="description" content={metaData.description} />
+      </Head>
       <MDXProvider components={components}>
-        <article className={showcase}>{children}</article>
+        <article className={showcase}>
+          <Heading1>{metaData.title}</Heading1>
+          <time>{metaData.createdAt}</time>
+          {children}
+        </article>
       </MDXProvider>
     </DefaultLayout>
   );

@@ -11,7 +11,7 @@ const Index: NextPage<Props> = (props) => {
   return (
     <>
       <Head>
-        <title>TOP</title>
+        <title>Mono Memo</title>
       </Head>
       <DefaultLayout siteNameElement="h1">
         <TopPage {...props} />

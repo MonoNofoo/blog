@@ -23,19 +23,21 @@ export type MetaData = {
   updatedAt?: LocalDate;
 };
 
-const articlesDirectory = path.join(process.cwd(), 'src', 'mdx');
+const articlesDirectory = path.join(process.cwd(), 'src', 'pages', 'articles');
 
 /**
  * 公開状態の全ての mdx のメタデータ取得
  */
-export const getArticlesMetaData = async () => {
+export const getArticlesMetaData = async (): Promise<Awaited<MetaData>[]> => {
   const fileNames = fs.readdirSync(articlesDirectory);
 
   const metaDataList = await Promise.all(
     fileNames.map(async (fileName) => {
-      const { meta }: { meta: MetaData } = await import(`@/mdx/${fileName}`);
+      const { meta }: { meta: Omit<MetaData, 'id'> } = await import(
+        `@/pages/articles/${fileName}`
+      );
 
-      return meta;
+      return { ...meta, ...{ id: fileName.replace(/\.mdx$/, '') } };
     }),
   );
 
