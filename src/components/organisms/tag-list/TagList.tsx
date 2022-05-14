@@ -1,5 +1,6 @@
 import { FaTag } from 'react-icons/fa';
 import Link from 'next/link';
+import clsx from 'clsx';
 import {
   MetaDataTagEnum,
   MetaDataTagId,
@@ -9,11 +10,12 @@ import { ArticleTagPagePath } from '@/const/pagePath';
 
 type Props = {
   tagIds: MetaDataTagId[];
+  className?: string;
 };
 
-const TagList = ({ tagIds }: Props) => {
+const TagList = ({ tagIds, className }: Props) => {
   return (
-    <ul className={styles.tagList}>
+    <ul className={clsx(styles.tagList, className)}>
       {tagIds.map((tagId) => (
         <li key={tagId} className={styles.tag}>
           <Link href={ArticleTagPagePath(MetaDataTagEnum[tagId])}>
@@ -26,6 +28,10 @@ const TagList = ({ tagIds }: Props) => {
       ))}
     </ul>
   );
+};
+
+TagList.defaultProps = {
+  className: null,
 };
 
 export default TagList;
