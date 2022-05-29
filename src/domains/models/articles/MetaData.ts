@@ -28,7 +28,7 @@ const articlesDirectory = path.join(process.cwd(), 'src', 'pages', 'articles');
 /**
  * 公開状態の全ての mdx のメタデータ取得
  */
-export const getArticlesMetaData = async (): Promise<Awaited<MetaData>[]> => {
+export const fetchArticlesMetaData = async (): Promise<Awaited<MetaData>[]> => {
   const fileNames = fs.readdirSync(articlesDirectory);
 
   const metaDataList = await Promise.all(
@@ -47,7 +47,15 @@ export const getArticlesMetaData = async (): Promise<Awaited<MetaData>[]> => {
 /**
  * 公開状態の記事のメタデータを投稿日の新しい順に取得
  */
-export const getSortedArticlesMetaData = async () => {
-  const metaData = await getArticlesMetaData();
+export const fetchSortedArticlesMetaData = async () => {
+  const metaData = await fetchArticlesMetaData();
   return metaData.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
+};
+
+export const fetchArticlesMetaDataByMetaDataTagId = async (
+  tagId: MetaDataTagId,
+) => {
+  const metaData = await fetchSortedArticlesMetaData();
+
+  return metaData.filter((v) => v.tags.includes(tagId));
 };

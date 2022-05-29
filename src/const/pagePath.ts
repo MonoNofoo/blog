@@ -7,4 +7,4 @@ export const ArticleDetailPagePath = (id: MetaDataId) =>
   `/articles/${id}` as const;
 
 export const ArticleTagPagePath = (tag: MetaDataTagEnumValue) =>
-  `/articles/tags/${tag.urlValue}` as const;
+  `/tags/${tag.urlValue}` as const;

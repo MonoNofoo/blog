@@ -36,6 +36,11 @@ export const sizeTheme = createGlobalTheme(':root', {
       tablet: '2.4rem',
       desktop: '3.2rem',
     },
+    middle: {
+      mobile: '1.8rem',
+      tablet: '1.8rem',
+      desktop: '2rem',
+    },
   },
 });
 

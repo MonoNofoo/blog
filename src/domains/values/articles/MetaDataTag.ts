@@ -36,3 +36,17 @@ export const MetaDataTagEnum: {
     label: 'SEO',
   },
 };
+
+export const metaDataTags = Object.values(MetaDataTagEnum);
+
+export const fetchMetaDataTagByUrlValue = (
+  urlValue: string,
+): MetaDataTagEnumValue => {
+  const metaDataTag = metaDataTags.find((tag) => tag.urlValue === urlValue);
+
+  if (typeof metaDataTag === 'undefined') {
+    throw new Error('タグ情報の取得に失敗しました。');
+  }
+
+  return metaDataTag;
+};

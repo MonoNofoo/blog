@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import type { NextPage } from 'next';
 import DefaultLayout from '@/components/layout/default-layout/DefaultLayout';
 import TopPage, { TopPageProps } from '@/components/pages/top/TopPage';
-import { getSortedArticlesMetaData } from '@/domains/models/articles/MetaData';
+import { fetchSortedArticlesMetaData } from '@/domains/models/articles/MetaData';
 
 type Props = TopPageProps;
 
@@ -12,6 +12,10 @@ const Index: NextPage<Props> = (props) => {
     <>
       <Head>
         <title>Mono Memo</title>
+        <meta
+          name="description"
+          content="個人的な学習メモとかを書いたりしている個人ブログサイトです。"
+        />
       </Head>
       <DefaultLayout siteNameElement="h1">
         <TopPage {...props} />
@@ -23,7 +27,7 @@ const Index: NextPage<Props> = (props) => {
 export default Index;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const articlesMetaData = await getSortedArticlesMetaData();
+  const articlesMetaData = await fetchSortedArticlesMetaData();
 
   return {
     props: { articlesMetaData },

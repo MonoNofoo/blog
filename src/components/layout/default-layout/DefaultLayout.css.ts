@@ -105,6 +105,7 @@ export const main = style({
   width: '100%',
   margin: '0 auto',
   padding: '0 16px 80px',
+  position: 'relative',
 });
 
 export const siteName = style({
