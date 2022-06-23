@@ -3,6 +3,10 @@ import { FaTwitter } from 'react-icons/fa';
 import myIconImage from '@public/images/common/my-icon.png';
 import * as styles from '@/components/organisms/profile/Profile.css';
 
+/**
+ * プロフィールのコンポーネント。
+ * 画像のテキストのみなので、枠や背景は呼び出し側が用意すること。
+ */
 const Profile = () => {
   return (
     <div className={styles.profile}>

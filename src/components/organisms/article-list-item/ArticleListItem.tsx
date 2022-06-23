@@ -8,9 +8,18 @@ import { ArticleDetailPagePath } from '@/const/pagePath';
 import { formatLocalDateToJapanese } from '@/domains/values/shared/LocalDate';
 
 type Props = {
+  /**
+   * 記事のメタデータ
+   */
   article: MetaData;
 };
 
+/**
+ * 記事一覧などで使用するコンポーネント。
+ * 記事のタイトルの概要、記事詳細へのリンクが表示される。
+ * @param article
+ * @constructor
+ */
 const ArticleListItem = ({ article }: Props) => {
   return (
     <article className={styles.articleListItem} key={article.id}>

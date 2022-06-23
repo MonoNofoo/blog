@@ -13,6 +13,12 @@ type Props = {
   className?: string;
 };
 
+/**
+ * ブログに紐づくタグを表すコンポーネント
+ * @param tagIds
+ * @param className
+ * @constructor
+ */
 const TagList = ({ tagIds, className }: Props) => {
   return (
     <ul className={clsx(styles.tagList, className)}>

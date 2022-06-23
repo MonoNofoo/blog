@@ -9,6 +9,12 @@ type Props = {
   siteNameElement?: 'h1' | 'a';
 };
 
+/**
+ *
+ * @param children
+ * @param siteNameElement
+ * @constructor
+ */
 const DefaultLayout = ({ children, siteNameElement }: Props) => {
   return (
     <div className={styles.outer}>
