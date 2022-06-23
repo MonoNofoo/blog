@@ -4,7 +4,7 @@ import { responsiveStyle } from '@/styles/mediaQuery';
 
 export const outer = style({
   background: darkTheme.gradient.base,
-  height: '100vh',
+  minHeight: '100vh',
   position: 'relative',
   overflowY: 'auto',
 });

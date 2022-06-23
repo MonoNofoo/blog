@@ -1,0 +1,59 @@
+import {NEXT_JS, REACT, TYPE_SCRIPT} from "../../domains/values/articles/MetaDataTag";
+import {
+    PUBLISH,
+} from "../../domains/values/articles/MetaDataStatus";
+import ArticleLayout from "../../components/layout/article-layout/ArticleLayout";
+
+export const meta = {
+    status: PUBLISH,
+    title: '素のHTML要素みたいなノリで使える自作コンポーネントを作る',
+    tags: [NEXT_JS, TYPE_SCRIPT, REACT],
+    description: 'sample記事ディスクリプションsample記事ディスクリプションsample記事ディスクリプションsample記事ディスクリプションsample記事ディスクリプションsample記事ディスクリプション',
+    createdAt: '2022-06-23'
+    // updatedAt: '2020-05-12'
+};
+
+## 結論
+ref を渡せるようにしたい場合。
+
+```tsx
+import {DetailedHTMLProps,
+  forwardRef,
+  InputHTMLAttributes
+} from "react";
+
+type Props = {
+  // input 要素の属性以外で渡したい props がある場合
+  hasError?: boolean;
+} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+
+const TextInput = forwardRef<HTMLInputElement, Props>(
+  ({hasError, ...props}, ref) => {
+    return (
+      <input
+        data-has-error={hasError}
+        {...props}
+        ref={ref}
+      />
+    );
+  }
+);
+```
+
+ref が必要ない場合。
+
+```tsx
+import {ButtonHTMLAttributes,ReactNode} from "react";
+
+type Props = {
+  children: ReactNode;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button = ({children, ...props}: Props) => {
+  return <button {...props}>{children}</button>
+}
+```
+
+基本的には `要素名HTMLAttributes<HTML要素名Element>` の形をしているが、a 要素だけ正式名称の `AnchorHTMLAttributes<HTMLAnchorElement>` となるので注意。
+
+export default ({children}) => <ArticleLayout metaData={meta}>{children}</ArticleLayout>
