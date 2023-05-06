@@ -24,11 +24,12 @@ const TagList = ({ tagIds, className }: Props) => {
     <ul className={clsx(styles.tagList, className)}>
       {tagIds.map((tagId) => (
         <li key={tagId} className={styles.tag}>
-          <Link href={ArticleTagPagePath(MetaDataTagEnum[tagId])}>
-            <a className={styles.link}>
-              <FaTag className={styles.icon} />
-              {MetaDataTagEnum[tagId].label}
-            </a>
+          <Link
+            href={ArticleTagPagePath(MetaDataTagEnum[tagId])}
+            className={styles.link}
+          >
+            <FaTag className={styles.icon} />
+            {MetaDataTagEnum[tagId].label}
           </Link>
         </li>
       ))}

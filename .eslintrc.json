@@ -22,7 +22,7 @@
       {
         "devDependencies": [
           "src/components/**/*.stories.tsx",
-          "src/components/**/*.css.ts"
+          "src/**/*.css.ts"
         ]
       }
     ],

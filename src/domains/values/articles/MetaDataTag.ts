@@ -5,7 +5,7 @@ export const SEO = 'SEO';
 
 export const MetaDataTagIds = [TYPE_SCRIPT, NEXT_JS, REACT, SEO] as const;
 
-export type MetaDataTagId = typeof MetaDataTagIds[number];
+export type MetaDataTagId = (typeof MetaDataTagIds)[number];
 
 export type MetaDataTagEnumValue<K extends MetaDataTagId = MetaDataTagId> = {
   id: K;

@@ -9,4 +9,4 @@ export const PRIVATE = 'PRIVATE';
 
 export const MetaDataStatuses = [PUBLISH, PRIVATE] as const;
 
-export type MetaDataStatus = typeof MetaDataStatuses[number];
+export type MetaDataStatus = (typeof MetaDataStatuses)[number];

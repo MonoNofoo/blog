@@ -23,8 +23,8 @@ const DefaultLayout = ({ children, siteNameElement }: Props) => {
       <div className={styles.decorationMiddle} />
       <header className={styles.header}>
         {siteNameElement === 'a' ? (
-          <Link href={TopPagePath}>
-            <a className={styles.siteName}>Mono Memo</a>
+          <Link href={TopPagePath} className={styles.siteName}>
+            Mono Memo
           </Link>
         ) : (
           <h1 className={styles.siteName}>Mono Memo</h1>

@@ -28,8 +28,11 @@ const ArticleListItem = ({ article }: Props) => {
       <p className={styles.description}>
         {OmitMetaDataDescription(article.description)}
       </p>
-      <Link href={ArticleDetailPagePath(article.id)}>
-        <a className={styles.detailLink}>全文を見る</a>
+      <Link
+        href={ArticleDetailPagePath(article.id)}
+        className={styles.detailLink}
+      >
+        全文を見る
       </Link>
       <span className={styles.dateShowcase}>
         <FaPencilAlt className={styles.dateIcon} />
