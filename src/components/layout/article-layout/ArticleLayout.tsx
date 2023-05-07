@@ -36,7 +36,7 @@ const components = {
 
 const ArticleLayout = ({ children, metaData }: Props) => {
   const router = useRouter();
-  console.log(router.query);
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
