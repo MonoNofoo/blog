@@ -5,16 +5,14 @@ import { useRouter } from 'next/router';
 import { FaHistory, FaPencilAlt } from 'react-icons/fa';
 import DefaultLayout from '@/components/layout/default-layout/DefaultLayout';
 import * as styles from '@/components/layout/article-layout/ArticleLayout.css';
-import {
-  BlockCode,
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  InlineCode,
-  Quote,
-  Text,
-} from '@/components/atom/custom-mdx/CustomMdx';
+import { InlineCode } from '@/components/atom/custom-mdx/InlineCode';
+import { BlockCode } from '@/components/atom/custom-mdx/BlockCode';
+import { Quote } from '@/components/atom/custom-mdx/Quote';
+import { Text } from '@/components/atom/custom-mdx/Text';
+import { Heading4 } from '@/components/atom/custom-mdx/Heading4';
+import { Heading3 } from '@/components/atom/custom-mdx/Heading3';
+import { Heading2 } from '@/components/atom/custom-mdx/Heading2';
+import { Heading1 } from '@/components/atom/custom-mdx/Heading1';
 import { MetaData } from '@/domains/models/articles/MetaData';
 import Profile from '@/components/organisms/profile/Profile';
 import { formatLocalDateToJapanese } from '@/domains/values/shared/LocalDate';
