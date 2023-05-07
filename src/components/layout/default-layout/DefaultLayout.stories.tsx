@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import DefaultLayout from '@/components/layout/default-layout/DefaultLayout';
 
 export default {
@@ -10,9 +10,9 @@ export default {
       iframeHeight: 500,
     },
   },
-} as ComponentMeta<typeof DefaultLayout>;
+} as Meta<typeof DefaultLayout>;
 
-const Template: ComponentStory<typeof DefaultLayout> = (args) => (
+const Template: StoryFn<typeof DefaultLayout> = (args) => (
   <DefaultLayout {...args} />
 );
 

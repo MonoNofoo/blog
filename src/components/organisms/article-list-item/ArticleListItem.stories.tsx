@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import ArticleListItem from '@/components/organisms/article-list-item/ArticleListItem';
 import { MetaData } from '@/domains/models/articles/MetaData';
 import { PUBLISH } from '@/domains/values/articles/MetaDataStatus';
@@ -7,7 +7,7 @@ import { NEXT_JS, TYPE_SCRIPT } from '@/domains/values/articles/MetaDataTag';
 export default {
   title: 'organisms/ArticleListItem',
   component: ArticleListItem,
-} as ComponentMeta<typeof ArticleListItem>;
+} as Meta<typeof ArticleListItem>;
 
 const dummyArticleMetaData: MetaData = {
   id: 'file-name',
@@ -18,7 +18,7 @@ const dummyArticleMetaData: MetaData = {
   createdAt: '2022-01-01',
 };
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+const Template: StoryFn<typeof ArticleListItem> = (args) => (
   <ArticleListItem {...args} />
 );
 

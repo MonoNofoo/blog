@@ -1,6 +1,7 @@
 import { FaTag } from 'react-icons/fa';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { FC } from 'react';
 import {
   MetaDataTagEnum,
   MetaDataTagId,
@@ -19,7 +20,7 @@ type Props = {
  * @param className
  * @constructor
  */
-const TagList = ({ tagIds, className }: Props) => {
+const TagList: FC<Props> = ({ tagIds, className }) => {
   return (
     <ul className={clsx(styles.tagList, className)}>
       {tagIds.map((tagId) => (
@@ -38,7 +39,7 @@ const TagList = ({ tagIds, className }: Props) => {
 };
 
 TagList.defaultProps = {
-  className: null,
+  className: undefined,
 };
 
 export default TagList;
