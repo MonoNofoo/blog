@@ -22,7 +22,11 @@
       {
         "devDependencies": [
           "src/components/**/*.stories.tsx",
-          "src/**/*.css.ts"
+          "src/**/*.css.ts",
+          "src/**/*.spec.tsx",
+          "src/**/*.spec.ts",
+          "jest.config.ts",
+          "jest.setup.ts"
         ]
       }
     ],
